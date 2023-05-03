@@ -1,31 +1,68 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registartion Form📋</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-			<link
-				href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@400;700&display=swap"
-				rel="stylesheet"
-			/>
-			<script
-				src="https://kit.fontawesome.com/71e602d8c4.js"
-				crossorigin="anonymous"
-			></script>
-			<link rel="stylesheet" href="./css/main.css" />
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Registartion Form📋</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<script
+			src="https://kit.fontawesome.com/71e602d8c4.js"
+			crossorigin="anonymous"
+		></script>
+		<link rel="stylesheet" href="./css/main.css" />
+	</head>
 
-    <div class="wrapper">
+	<body>
+		<div class="wrapper">
+			<form class="form">
+				<h1 class="form__title">Zarejestruj się!</h1>
 
-        
+				<div class="form__box">
+					<label for="username">Nazwa użytkownika:</label>
+					<input
+						type="text"
+						id="username"
+						placeholder="Podaj nazwę użytkownika"
+					/>
+					<p class="form__box-error-text">error</p>
+				</div>
 
+				<div class="form__box">
+					<label for="password">Hasło:</label>
+					<input type="password" id="password" placeholder="Podaj hasło" />
+					<p class="form__box-error-text">error</p>
+				</div>
 
-    </div>
-    
-    <script src="js/main.js"></script>
-</body>
+				<div class="form__box">
+					<label for="repassword">Powtórz hasło:</label>
+					<input type="password" id="repassword" placeholder="Powrórz hasło" />
+					<p class="form__box-error-text">error</p>
+				</div>
+
+				<div class="form__box">
+					<label for="email">Adres e-mail:</label>
+					<input type="email" id="email" placeholder="Podaj email" />
+					<p class="form__box-error-text">error</p>
+				</div>
+
+				<div class="form__buttons">
+					<button class="btn clear">Wyczyść</button>
+					<button class="btn submit">Wyślij</button>
+				</div>
+
+				<div class="form__popup">
+					<p>Formularz został poprawnie wysłany!</p>
+					<button class="btn close">Zamknij</button>
+				</div>
+			</form>
+		</div>
+
+		<script src="js/main.js"></script>
+	</body>
 </html>

@@ -1,0 +1,110 @@
+/* Color Theme Swatches in Hex */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: linear-gradient(315deg, #1D572E 13%, #77B278 75%);
+}
+
+.btn {
+  padding: 8px 16px;
+  background-color: #77B278;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 500;
+  box-shadow: -2px 2px 2px #000;
+  transition: background-color ease 0.3s;
+}
+.btn:hover {
+  background-color: #1D572E;
+}
+
+.wrapper {
+  width: 350px;
+  background-color: #fff;
+  box-shadow: 0 0 10px #000;
+}
+
+.form {
+  padding: 30px 40px;
+  display: flex;
+  flex-direction: column;
+}
+.form__title {
+  text-align: center;
+  padding: 0 0 20px;
+}
+.form__box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 5px 0;
+}
+.form__box.error input {
+  background-color: #FF4858;
+}
+.form__box.error .form__box-error-text {
+  visibility: visible;
+}
+.form__box label {
+  font-size: 1.2em;
+}
+.form__box input {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #D8DED8;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+.form__box-error-text {
+  visibility: hidden;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background-color: #ff4858;
+  padding: 0 5px;
+}
+.form__buttons {
+  align-self: flex-end;
+  padding: 20px 0;
+}
+.form__buttons .btn {
+  margin-left: 5px;
+}
+.form__popup {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 200px;
+  background-color: #fff;
+  border: 2px solid #1D572E;
+  border-radius: 5px;
+  top: -300px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: top 0.5s;
+}
+.form__popup p {
+  font-size: 1.2em;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background-color: #C2DC81;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+.form .show {
+  top: 150px;
+}/*# sourceMappingURL=main.css.map */
