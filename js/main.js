@@ -9,14 +9,33 @@ const emailInput = document.querySelector('#email');
 
 const popup = document.querySelector('form-popup');
 
-const clearForm = (e) => {
-	e.preventDefault();
+const inputs = [usernameInput, passwordInput, repasswordInput, emailInput];
 
-	[usernameInput, passwordInput, repasswordInput, emailInput].forEach((el) => {
-		el.value = '';
-	});
+const showError = (input, msg) => { 
 
-	console.log('clear clicked');
+ }
+
+
+const checkForm = (input) => {
+	input.forEach(el => {
+		if (el.value === '') {
+			showError(el, el.placeholder);
+		} else {
+			console.log('ok');
+		}
+	})
 };
 
-clearBtn.addEventListener('click', clearForm);
+clearBtn.addEventListener('click', (e) => {
+	e.preventDefault();
+
+	inputs.forEach((el) => {
+		el.value = '';
+	});
+});
+
+submitBtn.addEventListener('click', (e) => {
+	e.preventDefault();
+
+	checkForm(inputs);
+});
