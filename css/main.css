@@ -51,7 +51,7 @@ body {
   margin: 5px 0;
 }
 .form__box.error input {
-  background-color: #FF4858;
+  background-color: rgba(255, 72, 87, 0.5607843137);
 }
 .form__box.error .form__box-error-text {
   visibility: visible;
