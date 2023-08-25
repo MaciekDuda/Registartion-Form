@@ -7,13 +7,12 @@ const passwordInput = document.querySelector('#password');
 const repasswordInput = document.querySelector('#repassword');
 const emailInput = document.querySelector('#email');
 
-const popup = document.querySelector('form-popup');
+const popup = document.querySelector('.form__popup');
 
 const inputs = [usernameInput, passwordInput, repasswordInput, emailInput];
 
 const showError = (input, msg) => {
 	const formBox = input.parentElement;
-	console.log(formBox);
 	const errorMsg = formBox.querySelector('.form__box-error-text');
 	errorMsg.textContent = msg;
 	formBox.classList.add('error');
@@ -54,7 +53,7 @@ const checkMail = (email) => {
 		/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
 	if (re.test(email.value)) {
-		clearError(error);
+		clearError(email);
 	} else {
 		showError(email, 'Błędny format email');
 	}
@@ -65,8 +64,26 @@ clearBtn.addEventListener('click', (e) => {
 
 	inputs.forEach((el) => {
 		el.value = '';
+		clearError(el);
 	});
 });
+
+const checkErrors = () => {
+	const allInputs = document.querySelectorAll('.form__box');
+	let errorCount = 0;
+
+	allInputs.forEach((el) => {
+		if (el.classList.contains('error')) {
+			errorCount++;
+		}
+	});
+
+	if (errorCount === 0) {
+		popup.classList.add('show');
+	}
+
+	console.log(errorCount);
+};
 
 submitBtn.addEventListener('click', (e) => {
 	e.preventDefault();
@@ -75,4 +92,6 @@ submitBtn.addEventListener('click', (e) => {
 	checkLength(passwordInput, 8);
 	checkPassword(passwordInput, repasswordInput);
 	checkMail(emailInput);
+	checkErrors();
 });
+
